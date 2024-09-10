@@ -1,2 +1,9 @@
-package com.example.tmdb.repository;public interface MovieRepository {
+package com.example.tmdb.repository;
+
+import com.example.tmdb.entity.Movie;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface MovieRepository extends JpaRepository<Movie, Long> {
 }

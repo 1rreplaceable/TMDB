@@ -1,13 +1,14 @@
 package com.example.tmdb.entity;
 
 import lombok.Data;
-
+import lombok.EqualsAndHashCode;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "movies")
 @Data
 public class Movie {
     @Id
@@ -35,6 +36,7 @@ public class Movie {
             joinColumns = @JoinColumn(name = "movie_id"),
             inverseJoinColumns = @JoinColumn(name = "genre_id")
     )
+    @EqualsAndHashCode.Exclude
     private Set<Genre> genres = new HashSet<>();
 
     @ManyToMany
@@ -43,6 +45,7 @@ public class Movie {
             joinColumns = @JoinColumn(name = "movie_id"),
             inverseJoinColumns = @JoinColumn(name = "actor_id")
     )
+    @EqualsAndHashCode.Exclude
     private Set<Actor> actors = new HashSet<>();
 
     @ManyToMany
@@ -51,5 +54,6 @@ public class Movie {
             joinColumns = @JoinColumn(name = "movie_id"),
             inverseJoinColumns = @JoinColumn(name = "director_id")
     )
+    @EqualsAndHashCode.Exclude
     private Set<Director> directors = new HashSet<>();
 }
