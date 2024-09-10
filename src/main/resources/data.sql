@@ -4,6 +4,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- 기존 데이터 삭제 및 AUTO_INCREMENT 초기화
 TRUNCATE TABLE movie_directors;
 TRUNCATE TABLE movie_actors;
+TRUNCATE TABLE movie_genres;
 TRUNCATE TABLE directors;
 TRUNCATE TABLE actors;
 TRUNCATE TABLE movies;
@@ -54,3 +55,13 @@ INSERT INTO movie_directors (movie_id, director_id) VALUES
     (2, 2), -- The Shawshank Redemption, Frank Darabont
     (3, 3), -- The Godfather, Francis Ford Coppola
     (4, 4); -- Pulp Fiction, Quentin Tarantino
+
+-- Movie_Genres
+INSERT INTO movie_genres (movie_id, genre_id) VALUES
+    (1, 1), -- Inception, Action
+    (1, 2), -- Inception, Drama
+    (2, 2), -- The Shawshank Redemption, Drama
+    (3, 2), -- The Godfather, Drama
+    (3, 3), -- The Godfather, Crime (or any other genre that fits)
+    (4, 2), -- Pulp Fiction, Drama
+    (4, 4); -- Pulp Fiction, Thriller
