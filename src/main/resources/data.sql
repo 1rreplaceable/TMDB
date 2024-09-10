@@ -1,3 +1,17 @@
+-- 외래 키 제약 조건을 일시적으로 비활성화
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- 기존 데이터 삭제 및 AUTO_INCREMENT 초기화
+TRUNCATE TABLE movie_directors;
+TRUNCATE TABLE movie_actors;
+TRUNCATE TABLE directors;
+TRUNCATE TABLE actors;
+TRUNCATE TABLE movies;
+TRUNCATE TABLE genres;
+
+-- 외래 키 제약 조건 다시 활성화
+SET FOREIGN_KEY_CHECKS = 1;
+
 -- Genres
 INSERT INTO genres (name) VALUES
     ('Action'),
